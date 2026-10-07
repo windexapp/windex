@@ -3,73 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WINDEX - Premium Mobil Oyun Deneyimi</title>
+    <title>WINDEX - Mobil Oyun Tablet Modu & Optimizasyon</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <!-- Navbar -->
+
+    <!-- Arka Plan Neon Işıkları -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <!-- Navigasyon -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="assets/logo.svg" alt="WINDEX" style="height: 40px; width: auto;">
+                <img src="assets/logo.svg" alt="WINDEX Logo">
                 <span>WINDEX</span>
             </a>
             <div class="nav-links">
+                <a href="#karsilastirma">Karşılaştırma</a>
                 <a href="#ozellikler">Özellikler</a>
                 <a href="#sss">S.S.S.</a>
-                <a href="#" class="btn-primary" onclick="openModal('buyModal')">Satın Al</a>
+                <button class="btn-primary" onclick="openModal('buyModal')"><i class="fa-solid fa-cart-shopping"></i> Satın Al</button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Bölümü -->
+    <!-- Hero (Açılış) Bölümü -->
     <header class="hero">
         <div class="hero-content">
-            <div class="badge">Sürüm 4.3 Aktif</div>
-            <h1>Geniş Ekranın <span class="gradient-text">Gücünü Keşfet</span></h1>
-            <p>Dar açılara sıkışmayın. WINDEX ile tablet modunun geniş görüş açısını mobil cihazınızda deneyimleyin. %100 Güvenli, Ban Riski Yok.</p>
+            <div class="badge"><i class="fa-solid fa-shield-check"></i> Ban Riski Yok • %100 Güvenli</div>
+            <h1>Görüş Alanını Genişlet,<br><span class="gradient-text">Rakiplerine Fark At</span></h1>
+            <p>WINDEX ile mobil cihazınızın sınırlarını aşın. Oyun içi orijinal çözünürlük değerlerini optimize ederek tablet modunun geniş açısını telefonunuza taşıyın.</p>
             <div class="hero-buttons">
-                <button class="btn-primary" onclick="openModal('buyModal')"><i class="fa-solid fa-cart-shopping"></i> Hemen Satın Al</button>
-                <a href="#ozellikler" class="btn-secondary">Nasıl Çalışır?</a>
-            </div>
-            
-            <!-- Hero Görsel Karşılaştırması -->
-            <div class="hero-preview">
-                <img src="assets/product-preview.jpg" alt="WINDEX Önizleme" class="preview-img">
+                <button class="btn-primary" onclick="openModal('buyModal')"><i class="fa-solid fa-bolt"></i> Hemen Satın Al</button>
+                <a href="#karsilastirma" class="btn-secondary"><i class="fa-solid fa-eye"></i> Ekranı İncele</a>
             </div>
         </div>
-        <!-- Arka Plan Dekorasyonları -->
-        <div class="glow-orb orb-1"></div>
-        <div class="glow-orb orb-2"></div>
+        <div class="hero-image-wrapper glass-panel">
+            <img src="assets/hero-game.jpg" alt="WINDEX Gameplay" class="hero-img">
+        </div>
     </header>
 
-    <!-- Neden Biz? / Özellikler -->
+    <!-- Ekran Karşılaştırma Bölümü (Normal vs Wide) -->
+    <section id="karsilastirma" class="comparison-section">
+        <div class="section-title">
+            <h2>GÖRÜŞ ALANI <span class="gradient-text">FARKINI GÖRÜN</span></h2>
+            <p>Normal telefon görünümü ile WINDEX Tablet Modu arasındaki devasa açı farkı.</p>
+        </div>
+
+        <div class="toggle-buttons">
+            <button class="toggle-btn active" onclick="switchView('wide')">WINDEX Tablet Modu (Geniş)</button>
+            <button class="toggle-btn" onclick="switchView('normal')">Normal Telefon Modu (Dar)</button>
+        </div>
+
+        <div class="comparison-display glass-panel">
+            <div id="view-wide" class="view-box active">
+                <span class="view-tag tag-wide"><i class="fa-solid fa-expand"></i> WINDEX AÇISI (Geniş Görüş)</span>
+                <img src="assets/wide.jpg" alt="WINDEX Wide Görünüm">
+            </div>
+            <div id="view-normal" class="view-box">
+                <span class="view-tag tag-normal"><i class="fa-solid fa-compress"></i> NORMAL AÇI (Sıkışık Görüş)</span>
+                <img src="assets/normal.jpg" alt="Normal Görünüm">
+            </div>
+        </div>
+    </section>
+
+    <!-- Ürün Önizleme & Detay Kartı -->
+    <section class="preview-section">
+        <div class="preview-card glass-panel">
+            <div class="preview-img-container">
+                <img src="assets/product-preview.jpg" alt="WINDEX Önizleme" class="product-card-img">
+            </div>
+            <div class="preview-text">
+                <h2>Tamamen Yasal ve <span class="gradient-text">Güvenli Yapı</span></h2>
+                <ul class="check-list">
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>3. Parti Yazılım Değildir:</strong> Sistem veya oyun kodlarına müdahale etmez.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>Ban Riski Sıfır:</strong> Oyunun kendi desteklediği ekran çözünürlüğünü değiştirir.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>FPS Düşürmez:</strong> Cihazınızın performansını zorlamadan akıcı deneyim sunar.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>Otomatik Kurulum:</strong> Karmaşık ayarlarla uğraşmadan anında aktif edilir.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neden Biz / Özellikler -->
     <section id="ozellikler" class="features">
         <div class="section-title">
-            <h2>Neden <span class="gradient-text">WINDEX?</span></h2>
-            <p>Sıradan oyuncu olmak yerine, maçın hakimi olun.</p>
+            <h2>NEDEN <span class="gradient-text">WINDEX?</span></h2>
         </div>
-        
         <div class="feature-grid">
             <div class="feature-card glass-panel">
-                <div class="icon-box"><i class="fa-solid fa-expand"></i></div>
-                <h3>Geniş Görüş Alanı</h3>
-                <p>Tabletlerdeki geniş açıyı telefonunuza getirerek rakiplerinizi herkesten önce fark edin.</p>
+                <div class="icon-box"><i class="fa-solid fa-eye"></i></div>
+                <h3>Geniş Açı Üstünlüğü</h3>
+                <p>Sağ ve sol açıdaki rakipleri sizi görmeden siz onları fark edin.</p>
             </div>
-            
             <div class="feature-card glass-panel">
                 <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3>%100 Güvenli</h3>
-                <p>Oyuna dışarıdan müdahale etmez. Cihazınızın çözünürlük değerlerini oyunun desteklediği limitlerde optimize eder.</p>
+                <h3>%100 Ban Güvencesi</h3>
+                <p>Oyun dosyalarını değiştirmediği için hiçbir güvenlik sistemine takılmaz.</p>
             </div>
-            
             <div class="feature-card glass-panel">
-                <div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
-                <h3>Sıfır Gecikme</h3>
-                <p>FPS düşüşü veya lag yaratmaz. Saf performans ve geniş açı bir arada.</p>
+                <div class="icon-box"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <h3>Tüm Cihazlarla Uyumlu</h3>
+                <p>Android cihazların tamamında sorunsuz çalışır.</p>
             </div>
         </div>
     </section>
@@ -77,9 +115,8 @@
     <!-- Sıkça Sorulan Sorular -->
     <section id="sss" class="faq-section">
         <div class="section-title">
-            <h2>Aklınıza Takılan <span class="gradient-text">Sorular</span></h2>
+            <h2>SIKÇA SORULAN <span class="gradient-text">SORULAR</span></h2>
         </div>
-        
         <div class="faq-container">
             <div class="faq-item glass-panel">
                 <div class="faq-question">
@@ -87,27 +124,25 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Kesinlikle hayır. WINDEX, 3. parti hile yazılımı değildir. Sistem dosyalarına veya oyun kodlarına müdahale etmez. Sadece oyunun zaten desteklediği çözünürlük ayarlarını cihazınıza uyarlar. Bu nedenle ban riski sıfırdır ve tamamen güvenlidir.</p>
+                    <p>Hayır, hiçbir şekilde ban riski yoktur. WINDEX bir hile, injector veya 3. parti mod yazılımı değildir. Sadece cihazınızın ekran çözünürlüğünü oyunun izin verdiği ölçüde tablet oranlarına (16:9 / 4:3) ayarlar. Güvenle kullanabilirsiniz.</p>
                 </div>
             </div>
-            
             <div class="faq-item glass-panel">
                 <div class="faq-question">
-                    <h3>WINDEX 3. Parti Yazılım Mıdır?</h3>
+                    <h3>3. Parti Yazılım Sayılır Mı?</h3>
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Hayır. Oyunun dosyalarını değiştiren bir "hile" veya "injector" değildir. Cihazınızın ekran çözünürlüğünü oyun içinden değiştirerek tablet modunu aktif eden bir optimizasyon aracıdır.</p>
+                    <p>Hayır. Oyun verilerine veya hafızasına (RAM) erişim sağlamaz. İşletim sisteminin çözünürlük parametrelerini düzenleyen bir optimizasyon aracıdır.</p>
                 </div>
             </div>
-            
             <div class="faq-item glass-panel">
                 <div class="faq-question">
-                    <h3>Hangi Cihazlarda Çalışır?</h3>
+                    <h3>Satın Aldıktan Sonra Kurulum Nasıl Yapılır?</h3>
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Android işletim sistemine sahip tüm cihazlarla uyumludur. Satın alımdan sonra kurulum rehberi tarafınıza iletilir.</p>
+                    <p>Ödemenizi tamamladıktan sonra Telegram üzerinden size özel indirme bağlantısı ve resimli/videolu kurulum rehberi anında iletilir.</p>
                 </div>
             </div>
         </div>
@@ -120,43 +155,39 @@
                 <img src="assets/logo.svg" alt="WINDEX" style="height: 30px;">
                 <span>WINDEX</span>
             </div>
-            <p>© 2026 WINDEX. Tüm hakları saklıdır. Bu araç sadece desteklenen oyunlarla kullanılmak içindir.</p>
+            <p>© 2026 WINDEX. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 
-    <!-- Satın Alma Modalı -->
+    <!-- Açılır Satın Alım Penceresi (Modal) -->
     <div id="buyModal" class="modal-overlay">
         <div class="modal-content glass-panel">
             <span class="close-btn" onclick="closeModal('buyModal')">&times;</span>
             <div class="modal-header">
                 <h2>WINDEX <span class="gradient-text">PRO</span></h2>
-                <p>Sınırsız Erişim & Ömür Boyu Güncelleme</p>
-                <div class="price">₺249<span class="period">/Ömür Boyu</span></div>
+                <p>Sınırsız Tablet Modu Erişimi</p>
+                <div class="price">₺249 <span class="period">/ Sınırsız Lisans</span></div>
             </div>
-            
             <div class="modal-body">
                 <ul class="modal-features">
-                    <li><i class="fa-solid fa-check"></i> Anında Teslimat</li>
-                    <li><i class="fa-solid fa-check"></i> Ban Riski Yok</li>
-                    <li><i class="fa-solid fa-check"></i> 7/24 Destek</li>
-                    <li><i class="fa-solid fa-check"></i> Tüm Güncellemeler Ücretsiz</li>
+                    <li><i class="fa-solid fa-check"></i> Ömür Boyu Kullanım & Güncellemeler</li>
+                    <li><i class="fa-solid fa-check"></i> %100 Ban Risksiz Garanti</li>
+                    <li><i class="fa-solid fa-check"></i> Anında Otomatik Teslimat</li>
+                    <li><i class="fa-solid fa-check"></i> 7/24 Birebir Destek</li>
                 </ul>
-                
                 <div class="payment-info">
-                    <p class="pay-title">Nasıl Satın Alınır?</p>
-                    <p class="pay-desc">Ödeme işlemlerimiz tamamen güvenli Papara veya IBAN transferi ile yapılmaktadır. Ödemenizin ardından kurulum dosyası ve key anında teslim edilir.</p>
-                    
+                    <p class="pay-title">Ödeme Bilgisi (Papara / IBAN)</p>
+                    <p class="pay-desc">Aşağıdaki Papara numarasına ödemeyi yaptıktan sonra "Dekont Gönder" butonuna tıklayarak lisansınızı anında alın.</p>
                     <div class="crypto-wallet">
-                        <span class="wallet-label">Papara No:</span>
+                        <span class="wallet-label">Papara NO:</span>
                         <span class="wallet-address" id="paparaNo">1234567890</span>
                         <button class="copy-btn" onclick="copyToClipboard('1234567890', this)"><i class="fa-regular fa-copy"></i></button>
                     </div>
                 </div>
             </div>
-            
             <div class="modal-footer">
                 <a href="https://t.me/senintelegramlinkin" target="_blank" class="btn-telegram">
-                    <i class="fa-brands fa-telegram"></i> Dekont Gönder / İletişime Geç
+                    <i class="fa-brands fa-telegram"></i> Dekont Gönder & Lisans Al
                 </a>
             </div>
         </div>
