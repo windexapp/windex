@@ -1,4 +1,4 @@
-// Fareyi (Mouse) Takip Eden Dinamik Işık Efekti
+// Fareyi Takip Eden Dinamik Işık Efekti
 const cursorGlow = document.getElementById('cursor-glow');
 
 window.addEventListener('mousemove', (e) => {
@@ -6,12 +6,12 @@ window.addEventListener('mousemove', (e) => {
     cursorGlow.style.top = e.clientY + 'px';
 });
 
-// Her Müşteri Satın Al Butonuna Bastığında Benzersiz Referans Numarası Üretme
-function generateRandomRef() {
-    const randomNum = Math.floor(10000 + Math.random() * 90000);
+// Her Müşteriye Benzersiz ve Özel Referans Numarası Üretici
+function generateUniqueRef() {
+    const randomCode = Math.floor(10000 + Math.random() * 90000);
     const refElement = document.getElementById('dynamicRefNumber');
-    if(refElement) {
-        refElement.textContent = `WND-${randomNum}`;
+    if (refElement) {
+        refElement.textContent = `WND-${randomCode}`;
     }
 }
 
@@ -33,9 +33,9 @@ faqItems.forEach(item => {
     });
 });
 
-// Modal Aç/Kapat ve Referans Atama
+// Modal Aç/Kapat ve Referans Kodu Oluştur
 function openModal(id) {
-    generateRandomRef(); // Her açılışta yeni benzersiz refno üretir
+    generateUniqueRef(); // Modal açıldığı anda kişiye özel refno atanır
     document.getElementById(id).classList.add('active');
     document.body.style.overflow = 'hidden';
 }
@@ -52,13 +52,16 @@ window.onclick = function(e) {
     }
 };
 
-// Kopyalama Butonu
+// Kopyalama Fonksiyonu (Görsel Geri Bildirimli)
 function copyToClipboard(text, button) {
     navigator.clipboard.writeText(text).then(() => {
-        const icon = button.querySelector('i');
-        icon.className = 'fa-solid fa-check';
+        const originalHTML = button.innerHTML;
+        button.innerHTML = '<i class="fa-solid fa-check"></i> Kopyalandı!';
+        button.style.color = '#00F2FE';
+        
         setTimeout(() => {
-            icon.className = 'fa-regular fa-copy';
+            button.innerHTML = originalHTML;
+            button.style.color = '';
         }, 2000);
     });
 }
