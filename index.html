@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WINDEX - Profesyonel Tablet Modu & FPS Yükseltici</title>
+    <title>WINDEX — Professional Mobile Tablet Mode & FPS Booster</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Fareyi Takip Eden Dinamik Arka Plan Işığı -->
+    <!-- Fareyi Takip Eden Dinamik Işık -->
     <div id="cursor-glow"></div>
     <div class="glow-orb orb-1"></div>
     <div class="glow-orb orb-2"></div>
@@ -27,27 +27,35 @@
                 <a href="#ozellikler">Özellikler</a>
                 <a href="#yorumlar">Yorumlar</a>
                 <a href="#sss">S.S.S.</a>
-                <button class="btn-primary" onclick="openModal('buyModal')"><i class="fa-solid fa-cart-shopping"></i> Satın Al</button>
             </div>
+            <button class="btn-primary" onclick="openModal('buyModal')">
+                <i class="fa-solid fa-bolt-lightning"></i> Hemen Satın Al
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Bölümü (iPhone İçinde Görsel & FPS Vurgusu) -->
+    <!-- Hero Bölümü (Yatay Gerçekçi Cihaz Mockup'ı) -->
     <header class="hero">
         <div class="hero-content">
-            <div class="badge"><i class="fa-solid fa-shield-halved"></i> %100 Ban Güvencesi • Android & iOS Uyumlu</div>
+            <div class="badge">
+                <i class="fa-solid fa-shield-check"></i> %100 Ban Güvencesi &nbsp;&bull;&nbsp; <i class="fa-solid fa-microchip"></i> iOS & Android
+            </div>
             <h1>Görüş Alanını Genişlet,<br><span class="gradient-text">FPS'ini Zirveye Taşı</span></h1>
-            <p>WINDEX ile mobil cihazınızın sınırlarını aşın. Tablet modunun geniş açısı ve özel FPS optimizasyonuyla rakiplerinize göz açtırmayın.</p>
+            <p>WINDEX; mobil cihazlarda oyun içi görüş açısını %40'a kadar artıran ve donanım gücünü maksimum FPS için optimize eden yeni nesil yasal yazılımdır.</p>
             
             <div class="hero-buttons">
-                <button class="btn-primary" onclick="openModal('buyModal')"><i class="fa-solid fa-bolt"></i> Hemen Satın Al (329 TL)</button>
-                <a href="#karsilastirma" class="btn-secondary"><i class="fa-solid fa-eye"></i> Ekranı İncele</a>
+                <button class="btn-primary" onclick="openModal('buyModal')">
+                    <i class="fa-solid fa-cart-shopping"></i> Lisans Al (329 TL)
+                </button>
+                <a href="#karsilastirma" class="btn-secondary">
+                    <i class="fa-solid fa-arrow-down"></i> Farkı İncele
+                </a>
             </div>
 
-            <!-- Dikkat Çekici FPS & Tablet Modu Öne Çıkarma Kutusu -->
+            <!-- Dikkat Çekici Özellik Özet Kutusu -->
             <div class="highlight-banner glass-panel">
                 <div class="highlight-item">
-                    <i class="fa-solid fa-expand"></i>
+                    <div class="hi-icon"><i class="fa-solid fa-expand"></i></div>
                     <div>
                         <h4>Tablet Modu</h4>
                         <p>Geniş görüş açısı</p>
@@ -55,124 +63,132 @@
                 </div>
                 <div class="divider-line"></div>
                 <div class="highlight-item">
-                    <i class="fa-solid fa-gauge-high"></i>
+                    <div class="hi-icon"><i class="fa-solid fa-gauge-high"></i></div>
                     <div>
-                        <h4>FPS Yükseltici</h4>
-                        <p>Akıcı & Donmasız Oyun</p>
+                        <h4>+90/120 FPS</h4>
+                        <p>Akıcı & Donmasız</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- iPhone 15 Cihaz Çerçevesi İçinde Hero Görseli -->
-        <div class="iphone-container">
-            <div class="iphone-mockup">
-                <div class="iphone-screen">
-                    <img src="assets/hero-game.jpg" alt="WINDEX Gameplay" class="hero-screen-img">
+        <!-- Yatay Cihaz Görseli (Landscape Mockup) -->
+        <div class="device-showcase">
+            <div class="landscape-device-frame">
+                <div class="device-notch"></div>
+                <div class="device-screen">
+                    <img src="assets/hero-game.jpg" alt="WINDEX Gameplay" class="device-img">
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Yan Yana Ekran Karşılaştırma Bölümü -->
+    <!-- Yan Yana Eşit Karşılaştırma Bölümü (WINDEX: ON / OFF) -->
     <section id="karsilastirma" class="comparison-section">
         <div class="section-title">
-            <h2>GÖRÜŞ ALANI <span class="gradient-text">KARŞILAŞTIRMASI</span></h2>
-            <p>Normal telefon görünümü ile WINDEX Tablet Modu arasındaki devasa açı farkını inceleyin.</p>
+            <h2>GÖRÜŞ AÇISI <span class="gradient-text">KARŞILAŞTIRMASI</span></h2>
+            <p>WINDEX aktifken ve kapalıyken sahip olacağınız alan hakimiyetini net bir şekilde görün.</p>
         </div>
 
-        <div class="side-by-side-grid">
-            <!-- WINDEX Modu -->
-            <div class="comparison-card glass-panel wide-card">
-                <div class="card-tag tag-wide"><i class="fa-solid fa-expand"></i> WINDEX TABLET & FPS MODU</div>
-                <div class="card-img-wrap">
-                    <img src="assets/wide.jpg" alt="WINDEX Geniş Açı">
+        <div class="comparison-grid">
+            <!-- WINDEX ON -->
+            <div class="comp-card glass-panel on-card">
+                <div class="comp-tag tag-on">
+                    <i class="fa-solid fa-circle-check"></i> WINDEX: ON (Geniş Açı + FPS Optimizasyonu)
                 </div>
-                <p class="card-desc">Genişletilmiş görüş açısı sayesinde çevrenizi tamamen kontrol edin, rakipleri ilk siz görün.</p>
+                <div class="comp-img-wrapper">
+                    <img src="assets/wide.jpg" alt="WINDEX ON Görünüm">
+                </div>
+                <p class="comp-desc">Sağdaki ve soldaki düşmanları ilk siz fark edin, geniş açı üstünlüğüyle rakiplerinizi zihnen ve skorda alt edin.</p>
             </div>
 
-            <!-- Normal Mod -->
-            <div class="comparison-card glass-panel normal-card">
-                <div class="card-tag tag-normal"><i class="fa-solid fa-compress"></i> NORMAL TELEFON MODU</div>
-                <div class="card-img-wrap">
-                    <img src="assets/normal.jpg" alt="Normal Görünüm">
+            <!-- WINDEX OFF -->
+            <div class="comp-card glass-panel off-card">
+                <div class="comp-tag tag-off">
+                    <i class="fa-solid fa-circle-xmark"></i> WINDEX: OFF (Normal Telefon Sıkışık Açı)
                 </div>
-                <p class="card-desc">Dar açılar ve sınırlı görüş alanı nedeniyle rakiplerinizi geç fark edin.</p>
+                <div class="comp-img-wrapper">
+                    <img src="assets/normal.jpg" alt="WINDEX OFF Görünüm">
+                </div>
+                <p class="comp-desc">Dar ekran görüşü yüzünden çevre kontrolü yapamaz, sürpriz baskınlara karşı savunmasız kalırsınız.</p>
             </div>
         </div>
     </section>
 
-    <!-- Ürün Önizleme Detayları -->
-    <section class="preview-section">
-        <div class="preview-card glass-panel">
-            <div class="preview-img-container">
-                <img src="assets/product-preview.jpg" alt="WINDEX Önizleme" class="product-card-img">
-            </div>
-            <div class="preview-text">
-                <h2>Gelişmiş Teknoloji, <span class="gradient-text">Mükemmel Performans</span></h2>
-                <ul class="check-list">
-                    <li><i class="fa-solid fa-circle-check"></i> <strong>Android & iOS Desteği:</strong> Tüm telefon ve tabletlerde kusursuz çalışır.</li>
-                    <li><i class="fa-solid fa-circle-check"></i> <strong>Özel FPS Optimizasyonu:</strong> Cihazınızın donanım gücünü maksimuma çıkarır.</li>
-                    <li><i class="fa-solid fa-circle-check"></i> <strong>%100 Ban Güvencesi:</strong> Dahili sistem korumasıyla tamamen güvendesiniz.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Özellikler -->
-    <section id="ozellikler" class="features">
+    <!-- Özellikler ve Güvence Rozetleri -->
+    <section id="ozellikler" class="features-section">
         <div class="section-title">
             <h2>NEDEN <span class="gradient-text">WINDEX?</span></h2>
+            <p>Sektörün en gelişmiş optimizasyon altyapısı ile tanışın.</p>
         </div>
-        <div class="feature-grid">
-            <div class="feature-card glass-panel">
-                <div class="icon-box"><i class="fa-solid fa-gauge-high"></i></div>
-                <h3>Yüksek FPS</h3>
-                <p>Kasma ve donmaları ortadan kaldırarak en akıcı deneyimi yaşayın.</p>
+
+        <div class="features-grid">
+            <div class="feature-box glass-panel">
+                <div class="f-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>%100 Ban Güvencesi</h3>
+                <p>Oyun dosyalarına veya kodlarına asla müdahale etmez. Cihazınızın yerleşik çözünürlük parametreleriyle çalıştığı için tamamen güvenlidir.</p>
             </div>
-            <div class="feature-card glass-panel">
-                <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3>Güvenli Altyapı</h3>
-                <p>Hesabınız tamamen güvence altındadır, ban riski barındırmaz.</p>
+            <div class="feature-box glass-panel">
+                <div class="f-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <h3>Geniş Uyumluluk (iOS & Android)</h3>
+                <p>İster iPhone (iOS) ister Android telefon veya tablet kullanın, tüm cihaz ve ekran oranlarında kusursuz performans gösterir.</p>
             </div>
-            <div class="feature-card glass-panel">
-                <div class="icon-box"><i class="fa-solid fa-mobile-screen"></i></div>
-                <h3>Geniş Uyumluluk</h3>
-                <p>Android ve iOS işletim sistemlerinin tüm sürümlerini destekler.</p>
+            <div class="feature-box glass-panel">
+                <div class="f-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Yüksek FPS / Sıfır Donma</h3>
+                <p>Ağır grafik yüklerini hafifleterek cihazınızın ısınmasını önler ve sabit yüksek kare hızı (FPS) sunar.</p>
             </div>
         </div>
     </section>
 
-    <!-- Müşteri Yorumları Bölümü -->
+    <!-- Müşteri Yorumları -->
     <section id="yorumlar" class="reviews-section">
         <div class="section-title">
-            <h2>KULLANICI <span class="gradient-text">YORUMLARI</span></h2>
-            <p>Binlerce mutlu oyuncumuzdan gelen değerlendirmeler (Genel Puan: 4.9 / 5.0)</p>
+            <h2>KULLANICI <span class="gradient-text">DENEYİMLERİ</span></h2>
+            <p>Binlerce mutlu oyuncumuzdan gelen gerçek değerlendirmeler &bull; <strong>Puan: 4.9 / 5.0</strong></p>
         </div>
 
         <div class="reviews-grid">
             <div class="review-card glass-panel">
-                <div class="review-header">
-                    <span class="username">Kerem Y.</span>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <div class="review-top">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Kullanıcı" class="user-avatar">
+                    <div>
+                        <h4>Selin Aksoy</h4>
+                        <span class="verified"><i class="fa-solid fa-circle-check"></i> Doğrulanmış Alıcı</span>
+                    </div>
                 </div>
-                <p class="review-text">"Uygulama harika paket içerisinde geldi. Telegram'daki destek ekibi anında kurulumda yardımcı oldu. FPS artışı da efsane oldu, tavsiye ederim."</p>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"iPhone 15 Pro'da kullanıyorum. Satın alır almaz Telegram üzerinden anında paketimi teslim ettiler. Görüş açısı inanılmaz fark ettirdi, oyunun akıcılığı tavan yaptı!"</p>
             </div>
 
             <div class="review-card glass-panel">
-                <div class="review-header">
-                    <span class="username">Burak T.</span>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <div class="review-top">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="Kullanıcı" class="user-avatar">
+                    <div>
+                        <h4>Mert Demir</h4>
+                        <span class="verified"><i class="fa-solid fa-circle-check"></i> Doğrulanmış Alıcı</span>
+                    </div>
                 </div>
-                <p class="review-text">"iPhone 15 kullanıyorum, sorunsuz çalışıyor. Görüş açısı inanılmaz genişledi, maçlarda çok büyük avantaj sağlıyor."</p>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"İlk başta ban yerim diye çekiniyordum ama tamamen yasal ve güvenli olduğunu görünce rahatladım. FPS artışı efsane, kesinlikle tavsiye ediyorum."</p>
             </div>
 
             <div class="review-card glass-panel">
-                <div class="review-header">
-                    <span class="username">Mert K.</span>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <div class="review-top">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80" alt="Kullanıcı" class="user-avatar">
+                    <div>
+                        <h4>Emre Şahin</h4>
+                        <span class="verified"><i class="fa-solid fa-circle-check"></i> Doğrulanmış Alıcı</span>
+                    </div>
                 </div>
-                <p class="review-text">"Güven konusunda ilk başta tereddüt etmiştim ama ban riski sıfır dedikleri gibi çıktı. Teşekkürler WINDEX!"</p>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"Rakipleri artık sol köşeden çıkmadan görebiliyorum. Paket içeriği çok profesyonel hazırlanmış, destek ekibi de çok ilgili."</p>
             </div>
         </div>
     </section>
@@ -185,72 +201,91 @@
         <div class="faq-container">
             <div class="faq-item glass-panel">
                 <div class="faq-question">
-                    <h3>Ban Riski Var Mı?</h3>
+                    <h3>Ban Riski Bulunuyor mu?</h3>
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Kesinlikle hayır. WINDEX oyun dosyalarına müdahale etmez. Cihazın çözünürlük ve FPS optimizasyonunu düzenleyen yasal bir araçtır, ban riski bulunmaz.</p>
+                    <p>Kesinlikle hayır. WINDEX bir hile yazılımı değildir; oyun dosyalarına enjekte edilmez. Cihazın kendi ekran ve çözünürlük ayarlarını optimize eden tamamen güvenli bir sistemdir.</p>
                 </div>
             </div>
             <div class="faq-item glass-panel">
                 <div class="faq-question">
-                    <h3>Hangi Cihazlarda Çalışır?</h3>
+                    <h3>Kurulum Nasıl Yapılıyor?</h3>
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Android ve iOS (iPhone & iPad) cihazların tamamında sorunsuz bir şekilde çalışmaktadır.</p>
+                    <p>Ödemenizi tamamlayıp dekontu gönderdikten sonra, Telegram üzerinden özel kurulum dosyanız ve adım adım resimli/videolu rehberiniz anında tarafınıza iletilir.</p>
+                </div>
+            </div>
+            <div class="faq-item glass-panel">
+                <div class="faq-question">
+                    <h3>Hangi Cihazları Destekliyor?</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Tüm Android telefonlar, tabletler, iPhone modelleri ve iPad cihazlarıyla tam uyumludur.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer / İletişim Hakkında -->
-    <footer id="iletisim">
+    <!-- Footer -->
+    <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="assets/logo.svg" alt="WINDEX" style="height: 30px;">
+                <img src="assets/logo.svg" alt="WINDEX" style="height: 32px;">
                 <span>WINDEX</span>
             </div>
-            <p>WINDEX, mobil oyuncular için geliştirilmiş en güvenilir Tablet Modu ve FPS Optimizasyon paketidir.</p>
-            <p>© 2026 WINDEX. Tüm hakları saklıdır.</p>
+            <p>Mobil oyuncular için tasarlanmış profesyonel tablet modu ve FPS optimizasyon çözümü.</p>
+            <p class="copyright">&copy; 2026 WINDEX. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 
-    <!-- Dinamik Referans Numaralı Satın Alım Modalı -->
+    <!-- Göz Alıcı Parlayan Satın Al Modalı -->
     <div id="buyModal" class="modal-overlay">
-        <div class="modal-content glass-panel">
+        <div class="modal-content glass-panel glow-modal-border">
             <span class="close-btn" onclick="closeModal('buyModal')">&times;</span>
             <div class="modal-header">
-                <h2>WINDEX <span class="gradient-text">PRO PAKET</span></h2>
-                <p>Tablet Modu + FPS Yükseltici</p>
-                <div class="price">329 TL <span class="period">/ Sınırsız Lisans</span></div>
+                <h2>WINDEX <span class="gradient-text">PRO LİSANS</span></h2>
+                <p>Sınırsız Tablet Modu + Özel FPS Optimizasyonu</p>
+                <div class="price-tag">329 TL <span class="period">/ Ömür Boyu Sürüm</span></div>
             </div>
             <div class="modal-body">
-                <ul class="modal-features">
-                    <li><i class="fa-solid fa-check"></i> Ömür Boyu Güncelleme Erişimi</li>
-                    <li><i class="fa-solid fa-check"></i> Android & iOS Desteği</li>
-                    <li><i class="fa-solid fa-check"></i> %100 Ban Güvencesi</li>
+                <ul class="modal-features-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Ömür Boyu Güncelleme Erişimi</li>
+                    <li><i class="fa-solid fa-check-circle"></i> iOS & Android Desteği</li>
+                    <li><i class="fa-solid fa-check-circle"></i> %100 Ban Güvencesi</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Anında Otomatik Telegram Teslimatı</li>
                 </ul>
-                <div class="payment-info">
-                    <p class="pay-title">Ödeme Bilgileri & Tutar</p>
-                    <p class="pay-desc">Ödemeniz Gereken Tutar: <strong>329 TL</strong>. Papara ile ödeme yaparken aşağıdaki <strong>Size Özel Referans Kodunu</strong> açıklama kısmına yazmayı unutmayın!</p>
+
+                <div class="payment-box">
+                    <div class="pay-info-top">
+                        <span class="pay-title"><i class="fa-solid fa-wallet"></i> Papara İle Ödeme Yap</span>
+                        <span class="pay-amount">Ödenecek Tutar: <strong>329 TL</strong></span>
+                    </div>
+                    <p class="pay-desc">Aşağıdaki Papara numarasına 329 TL gönderdikten sonra, size özel üretilen referans numarasını açıklama kısmına yazınız.</p>
                     
-                    <div class="crypto-wallet">
-                        <span class="wallet-label">Papara No:</span>
-                        <span class="wallet-address">1234567890</span>
+                    <div class="wallet-row">
+                        <span class="w-label">Papara No:</span>
+                        <span class="w-num">1234567890</span>
                         <button class="copy-btn" onclick="copyToClipboard('1234567890', this)"><i class="fa-regular fa-copy"></i></button>
                     </div>
 
-                    <!-- Her Müşteriye Farklı Verilen Dinamik Referans Numarası -->
-                    <div class="ref-box">
-                        <span>Size Özel Referans No:</span>
-                        <strong id="dynamicRefNumber">WND-98421</strong>
+                    <!-- Parlayan Size Özel Referans Numarası -->
+                    <div class="reference-box-neon">
+                        <span class="ref-label">SİZE ÖZEL REFERANS KODU:</span>
+                        <div class="ref-code-wrapper">
+                            <strong id="dynamicRefNumber">WND-84920</strong>
+                            <button class="copy-ref-btn" onclick="copyToClipboard(document.getElementById('dynamicRefNumber').textContent, this)">
+                                <i class="fa-regular fa-copy"></i> Kopyala
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="https://t.me/senintelegramlinkin" target="_blank" class="btn-telegram">
-                    <i class="fa-brands fa-telegram"></i> Dekont Gönder & Kurulum Al
+                <a href="https://t.me/senintelegramlinkin" target="_blank" class="btn-telegram-glow">
+                    <i class="fa-brands fa-telegram"></i> Dekontu Gönder & Lisansını Hemen Al
                 </a>
             </div>
         </div>
