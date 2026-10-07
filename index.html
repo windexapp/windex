@@ -4,29 +4,246 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WINDEX Pro - Shopier ile Güvenli Satın Al</title>
-    <!-- FontAwesome İkonları -->
+    <!-- FontAwesome İkon Kütüphanesi -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .logo span {
+            color: #3b82f6;
+        }
+
+        .btn-nav {
+            background: #2563eb;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-nav:hover {
+            background: #1d4ed8;
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero-container {
+            max-width: 750px;
+            width: 100%;
+        }
+
+        .shopier-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            color: #94a3b8;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .price-box {
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #64748b;
+            font-size: 20px;
+        }
+
+        .current-price {
+            font-size: 40px;
+            font-weight: 800;
+            color: #38bdf8;
+        }
+
+        .price-tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Shopier Buton */
+        .btn-shopier-main {
+            display: inline-block;
+            width: 100%;
+            max-width: 450px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: #ffffff;
+            padding: 18px 30px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-shopier-main:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.5);
+            background: linear-gradient(135deg, #1d4ed8, #1e40af);
+        }
+
+        .trust-footer-text {
+            color: #64748b;
+            font-size: 13px;
+            margin-top: 15px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 8%;
+            background: rgba(15, 23, 42, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #f8fafc;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .feature-card i {
+            font-size: 32px;
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #f1f5f9;
+        }
+
+        .feature-card p {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .footer-trust {
+            margin-top: 8px;
+            font-size: 12px;
+            color: #10b981;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Üst Menü / Navbar -->
+    <!-- Üst Menü -->
     <header class="navbar">
         <div class="logo">
             <i class="fa-solid fa-bolt"></i> WINDEX <span>PRO</span>
         </div>
         <nav>
             <a href="https://shopier.com/ZAXENLISANS/51600553" target="_blank" class="btn-nav">
-                <i class="fa-solid fa-shield-check"></i> Shopier ile Satın Al
+                <i class="fa-solid fa-shield-check"></i> Satın Al
             </a>
         </nav>
     </header>
 
-    <!-- Ana Karşılama Alanı (Hero Section) -->
+    <!-- Ana Alan -->
     <section class="hero">
         <div class="hero-container">
             
-            <!-- Shopier Güven Rozeti -->
             <div class="shopier-badge">
                 <i class="fa-solid fa-shield-halved"></i> Shopier Güvencesi ile %100 Güvenli Ödeme
             </div>
@@ -36,14 +253,12 @@
                 Anında otomatik teslimat, kesintisiz erişim ve 7/24 Telegram destek avantajıyla WINDEX Pro ayrıcalığını hemen yaşayın.
             </p>
 
-            <!-- Fiyat Alanı -->
             <div class="price-box">
                 <span class="old-price">499 TL</span>
                 <span class="current-price">329 TL</span>
                 <span class="price-tag">Sınırsız Erişim</span>
             </div>
 
-            <!-- SHOPİER DİREKT SATIN ALMA BUTONU -->
             <div class="cta-wrapper">
                 <a href="https://shopier.com/ZAXENLISANS/51600553" target="_blank" class="btn-shopier-main">
                     <i class="fa-solid fa-cart-shopping"></i> Shopier Güvencesi İle Satın Al (329 TL)
@@ -78,11 +293,11 @@
         </div>
     </section>
 
-    <!-- Alt Bilgi / Footer -->
+    <!-- Alt Bilgi -->
     <footer>
         <p>&copy; 2026 WINDEX Pro. Tüm hakları saklıdır.</p>
         <div class="footer-trust">
-            <span><i class="fa-solid fa-lock"></i> Shopier Güvenli Ödeme Altyapısı Kullanılmaktadır</span>
+            <i class="fa-solid fa-lock"></i> Shopier Güvenli Ödeme Altyapısı Kullanılmaktadır
         </div>
     </footer>
 
