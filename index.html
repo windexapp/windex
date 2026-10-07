@@ -3,927 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>WIDEX — Mobil Gaming Experience</title>
-    <meta name="description" content="WIDEX ile mobil oyunlarda daha geniş görüntü deneyimi.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+    <title>WINDEX - Premium Mobil Oyun Deneyimi</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-<!-- ================= HEADER ================= -->
-
-<header class="header">
-
-    <div class="container nav">
-
-<a href="#" class="logo">
-    <img src="assets/logo.png" alt="WIDEX Logo" style="height: 35px; width: auto; object-fit: contain;">
-    <span>WIDEX</span>
     
-        </a>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="assets/logo.svg" alt="WINDEX" style="height: 40px; width: auto;">
+                <span>WINDEX</span>
+            </a>
+            <div class="nav-links">
+                <a href="#ozellikler">Özellikler</a>
+                <a href="#sss">S.S.S.</a>
+                <a href="#" class="btn-primary" onclick="openModal('buyModal')">Satın Al</a>
+            </div>
+        </div>
+    </nav>
 
-        <nav class="desktop-menu">
-            <a href="#urun">Ürün</a>
-            <a href="#ozellikler">Özellikler</a>
-            <a href="#video">Kurulum</a>
-            <a href="#yorumlar">Yorumlar</a>
-            <a href="#sss">SSS</a>
-        </nav>
-
-        <a href="#satinal" class="nav-button">
-            Satın Al
-        </a>
-
-        <button class="menu-button" id="menuButton">
-            ☰
-        </button>
-
-    </div>
-
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#urun">Ürün</a>
-        <a href="#ozellikler">Özellikler</a>
-        <a href="#video">Kurulum</a>
-        <a href="#yorumlar">Yorumlar</a>
-        <a href="#sss">SSS</a>
-        <a href="#satinal">Satın Al</a>
-    </div>
-
-</header>
-
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-    <div class="hero-glow"></div>
-
-    <div class="container hero-grid">
-
+    <!-- Hero Bölümü -->
+    <header class="hero">
         <div class="hero-content">
-
-            <div class="badge">
-                <span class="pulse"></span>
-                MOBİL GAMING EXPERIENCE
-            </div>
-
-            <h1>
-                Oyunu daha
-                <span>geniş gör.</span>
-            </h1>
-
-            <p>
-                WIDEX ile desteklenen mobil cihazlarda geniş ekran
-                deneyimini keşfet. Daha fazla görüntü alanı,
-                daha farklı bir oyun deneyimi.
-            </p>
-
+            <div class="badge">Sürüm 4.3 Aktif</div>
+            <h1>Geniş Ekranın <span class="gradient-text">Gücünü Keşfet</span></h1>
+            <p>Dar açılara sıkışmayın. WINDEX ile tablet modunun geniş görüş açısını mobil cihazınızda deneyimleyin. %100 Güvenli, Ban Riski Yok.</p>
             <div class="hero-buttons">
-
-                <a href="#satinal" class="primary-button">
-                    Şimdi İncele
-                    <span>→</span>
-                </a>
-
-                <a href="#video" class="secondary-button">
-                    ▶ Kurulumu Gör
-                </a>
-
+                <button class="btn-primary" onclick="openModal('buyModal')"><i class="fa-solid fa-cart-shopping"></i> Hemen Satın Al</button>
+                <a href="#ozellikler" class="btn-secondary">Nasıl Çalışır?</a>
             </div>
-
-            <div class="hero-info">
-
-                <div>
-                    <strong>iOS</strong>
-                    <span>Destek</span>
-                </div>
-
-                <div>
-                    <strong>Android</strong>
-                    <span>Destek</span>
-                </div>
-
-                <div>
-                    <strong>7/24</strong>
-                    <span>Destek</span>
-                </div>
-
+            
+            <!-- Hero Görsel Karşılaştırması -->
+            <div class="hero-preview">
+                <img src="assets/product-preview.jpg" alt="WINDEX Önizleme" class="preview-img">
             </div>
-
         </div>
+        <!-- Arka Plan Dekorasyonları -->
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </header>
 
-
-        <!-- TELEFON -->
-
-        <div class="phone-area">
-
-            <div class="phone-shadow"></div>
-
-            <div class="phone">
-
-                <div class="phone-notch"></div>
-
-                <div class="phone-screen">
-
-                    <!-- BURAYA KENDİ OYUN GÖRSELİNİ KOY -->
-                    <img
-                        src="assets/hero-game.jpg"
-                        alt="WIDEX geniş ekran oyun görüntüsü"
-                        class="hero-game-image"
-                    >
-
-                    <div class="screen-overlay">
-
-                        <div class="game-label">
-                            WIDEX MODE
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="floating-card card-one">
-                <span>◉</span>
-                Daha geniş görüntü
-            </div>
-
-            <div class="floating-card card-two">
-                <span>✓</span>
-                Hızlı kurulum
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= TRUST ================= -->
-
-<section class="trust">
-
-    <div class="container trust-grid">
-
-        <div>
-            <strong>⚡ Hızlı Teslimat</strong>
-            <span>Ödeme sonrası destek</span>
-        </div>
-
-        <div>
-            <strong>🔒 Güvenli Süreç</strong>
-            <span>Manuel ödeme kontrolü</span>
-        </div>
-
-        <div>
-            <strong>🎮 Mobil Gaming</strong>
-            <span>iOS & Android</span>
-        </div>
-
-        <div>
-            <strong>💬 Telegram Destek</strong>
-            <span>Kurulum desteği</span>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= PRODUCT ================= -->
-
-<section class="section product-section" id="urun">
-
-    <div class="container">
-
+    <!-- Neden Biz? / Özellikler -->
+    <section id="ozellikler" class="features">
         <div class="section-title">
-
-            <div class="small-title">
-                WIDEX PRODUCT
-            </div>
-
-            <h2>
-                Mobil oyun deneyimini
-                <span>yeniden keşfet.</span>
-            </h2>
-
-            <p>
-                Geniş ekran modu ile desteklenen cihazlarda
-                farklı bir görüntü deneyimi elde edin.
-            </p>
-
+            <h2>Neden <span class="gradient-text">WINDEX?</span></h2>
+            <p>Sıradan oyuncu olmak yerine, maçın hakimi olun.</p>
         </div>
-
-
-        <div class="product-grid">
-
-            <div class="product-visual">
-
-                <div class="visual-card">
-
-                    <!-- BURAYA ÜRÜN GÖRSELİN -->
-                    <img
-                        src="assets/product-preview.jpg"
-                        alt="WIDEX ürün önizleme"
-                    >
-
-                    <div class="visual-badge">
-                        WIDEX
-                    </div>
-
-                </div>
-
+        
+        <div class="feature-grid">
+            <div class="feature-card glass-panel">
+                <div class="icon-box"><i class="fa-solid fa-expand"></i></div>
+                <h3>Geniş Görüş Alanı</h3>
+                <p>Tabletlerdeki geniş açıyı telefonunuza getirerek rakiplerinizi herkesten önce fark edin.</p>
             </div>
+            
+            <div class="feature-card glass-panel">
+                <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>%100 Güvenli</h3>
+                <p>Oyuna dışarıdan müdahale etmez. Cihazınızın çözünürlük değerlerini oyunun desteklediği limitlerde optimize eder.</p>
+            </div>
+            
+            <div class="feature-card glass-panel">
+                <div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Sıfır Gecikme</h3>
+                <p>FPS düşüşü veya lag yaratmaz. Saf performans ve geniş açı bir arada.</p>
+            </div>
+        </div>
+    </section>
 
-
-            <div class="product-info">
-
-                <div class="product-tag">
-                    DIGITAL PRODUCT
+    <!-- Sıkça Sorulan Sorular -->
+    <section id="sss" class="faq-section">
+        <div class="section-title">
+            <h2>Aklınıza Takılan <span class="gradient-text">Sorular</span></h2>
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-item glass-panel">
+                <div class="faq-question">
+                    <h3>Ban Riski Var Mı?</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
                 </div>
-
-                <h3>
-                    WIDEX iPad Mode
-                </h3>
-
-                <p class="product-description">
-                    Mobil oyunlarda geniş ekran görünümünü deneyimlemek
-                    isteyen kullanıcılar için hazırlanmış dijital ürün.
-                </p>
-
-
-                <div class="rating">
-
-                    <div class="stars">
-                        ★★★★★
-                    </div>
-
-                    <span>
-                        4.9 / 5
-                    </span>
-
+                <div class="faq-answer">
+                    <p>Kesinlikle hayır. WINDEX, 3. parti hile yazılımı değildir. Sistem dosyalarına veya oyun kodlarına müdahale etmez. Sadece oyunun zaten desteklediği çözünürlük ayarlarını cihazınıza uyarlar. Bu nedenle ban riski sıfırdır ve tamamen güvenlidir.</p>
                 </div>
-
-
-                <div class="price">
-
-                    <span class="old-price">₺699</span>
-
-                    <strong>₺399</strong>
-
-                    <span class="price-label">
-                        Tek seferlik
-                    </span>
-
+            </div>
+            
+            <div class="faq-item glass-panel">
+                <div class="faq-question">
+                    <h3>WINDEX 3. Parti Yazılım Mıdır?</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
                 </div>
+                <div class="faq-answer">
+                    <p>Hayır. Oyunun dosyalarını değiştiren bir "hile" veya "injector" değildir. Cihazınızın ekran çözünürlüğünü oyun içinden değiştirerek tablet modunu aktif eden bir optimizasyon aracıdır.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item glass-panel">
+                <div class="faq-question">
+                    <h3>Hangi Cihazlarda Çalışır?</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Android işletim sistemine sahip tüm cihazlarla uyumludur. Satın alımdan sonra kurulum rehberi tarafınıza iletilir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.svg" alt="WINDEX" style="height: 30px;">
+                <span>WINDEX</span>
+            </div>
+            <p>© 2026 WINDEX. Tüm hakları saklıdır. Bu araç sadece desteklenen oyunlarla kullanılmak içindir.</p>
+        </div>
+    </footer>
 
-                <ul class="product-list">
-
-                    <li>
-                        <span>✓</span>
-                        iOS & Android uyumluluğu
-                    </li>
-
-                    <li>
-                        <span>✓</span>
-                        Kurulum dosyaları
-                    </li>
-
-                    <li>
-                        <span>✓</span>
-                        Adım adım kurulum videosu
-                    </li>
-
-                    <li>
-                        <span>✓</span>
-                        Telegram kurulum desteği
-                    </li>
-
-                    <li>
-                        <span>✓</span>
-                        Satın alma sonrası destek
-                    </li>
-
+    <!-- Satın Alma Modalı -->
+    <div id="buyModal" class="modal-overlay">
+        <div class="modal-content glass-panel">
+            <span class="close-btn" onclick="closeModal('buyModal')">&times;</span>
+            <div class="modal-header">
+                <h2>WINDEX <span class="gradient-text">PRO</span></h2>
+                <p>Sınırsız Erişim & Ömür Boyu Güncelleme</p>
+                <div class="price">₺249<span class="period">/Ömür Boyu</span></div>
+            </div>
+            
+            <div class="modal-body">
+                <ul class="modal-features">
+                    <li><i class="fa-solid fa-check"></i> Anında Teslimat</li>
+                    <li><i class="fa-solid fa-check"></i> Ban Riski Yok</li>
+                    <li><i class="fa-solid fa-check"></i> 7/24 Destek</li>
+                    <li><i class="fa-solid fa-check"></i> Tüm Güncellemeler Ücretsiz</li>
                 </ul>
-
-
-                <a href="#satinal" class="primary-button full-button">
-                    Ürünü Satın Al
-                    <span>→</span>
+                
+                <div class="payment-info">
+                    <p class="pay-title">Nasıl Satın Alınır?</p>
+                    <p class="pay-desc">Ödeme işlemlerimiz tamamen güvenli Papara veya IBAN transferi ile yapılmaktadır. Ödemenizin ardından kurulum dosyası ve key anında teslim edilir.</p>
+                    
+                    <div class="crypto-wallet">
+                        <span class="wallet-label">Papara No:</span>
+                        <span class="wallet-address" id="paparaNo">1234567890</span>
+                        <button class="copy-btn" onclick="copyToClipboard('1234567890', this)"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <a href="https://t.me/senintelegramlinkin" target="_blank" class="btn-telegram">
+                    <i class="fa-brands fa-telegram"></i> Dekont Gönder / İletişime Geç
                 </a>
-
-                <div class="secure-note">
-                    🔐 Manuel IBAN ödeme • Dekont ile doğrulama
-                </div>
-
             </div>
-
         </div>
-
     </div>
 
-</section>
-
-
-<!-- ================= FEATURES ================= -->
-
-<section class="section features-section" id="ozellikler">
-
-    <div class="container">
-
-        <div class="section-title center">
-
-            <div class="small-title">
-                NEDEN WIDEX?
-            </div>
-
-            <h2>
-                Daha fazla alan.
-                <span>Daha farklı deneyim.</span>
-            </h2>
-
-        </div>
-
-
-        <div class="features-grid">
-
-            <div class="feature-card">
-
-                <div class="feature-icon">◫</div>
-
-                <h3>Geniş Görüntü</h3>
-
-                <p>
-                    Desteklenen cihazlarda daha geniş görüntü
-                    deneyimi için tasarlanmıştır.
-                </p>
-
-            </div>
-
-
-            <div class="feature-card">
-
-                <div class="feature-icon">⚡</div>
-
-                <h3>Kolay Kurulum</h3>
-
-                <p>
-                    Kurulum sürecini adım adım anlatan video
-                    ve dosyalar ürünle birlikte sunulur.
-                </p>
-
-            </div>
-
-
-            <div class="feature-card">
-
-                <div class="feature-icon">📱</div>
-
-                <h3>Mobil Odaklı</h3>
-
-                <p>
-                    Mobil cihaz kullanıcıları için hazırlanmış
-                    sade ve pratik sistem.
-                </p>
-
-            </div>
-
-
-            <div class="feature-card">
-
-                <div class="feature-icon">💬</div>
-
-                <h3>Telegram Destek</h3>
-
-                <p>
-                    Satın alma ve kurulum sürecinde Telegram
-                    üzerinden destek alabilirsiniz.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= COMPARISON ================= -->
-
-<section class="section comparison-section">
-
-    <div class="container">
-
-        <div class="section-title center">
-
-            <div class="small-title">
-                EXPERIENCE
-            </div>
-
-            <h2>
-                Görüntü deneyimini
-                <span>karşılaştır.</span>
-            </h2>
-
-        </div>
-
-
-        <div class="comparison">
-
-            <div class="comparison-item">
-
-                <div class="comparison-header">
-                    Standart Görüntü
-                </div>
-
-                <!-- KENDİ NORMAL GÖRSELİN -->
-                <img
-                    src="assets/normal.jpg"
-                    alt="Standart görüntü"
-                >
-
-            </div>
-
-
-            <div class="comparison-arrow">
-                →
-            </div>
-
-
-            <div class="comparison-item active">
-
-                <div class="comparison-header">
-                    WIDEX Geniş Görüntü
-                </div>
-
-                <!-- KENDİ GENİŞ GÖRSELİN -->
-                <img
-                    src="assets/wide.jpg"
-                    alt="WIDEX geniş görüntü"
-                >
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= VIDEO ================= -->
-
-<section class="section video-section" id="video">
-
-    <div class="container">
-
-        <div class="section-title center">
-
-            <div class="small-title">
-                KURULUM
-            </div>
-
-            <h2>
-                Nasıl kurulur?
-            </h2>
-
-            <p>
-                Satın aldıktan sonra kurulum videosunu
-                izleyerek işlemleri kolayca tamamlayabilirsiniz.
-            </p>
-
-        </div>
-
-
-        <div class="video-wrapper">
-
-            <!-- VİDEONU BURAYA KOY -->
-            <video
-                controls
-                preload="metadata"
-                poster="assets/video-cover.jpg"
-            >
-
-                <source
-                    src="assets/setup-video.mp4"
-                    type="video/mp4"
-                >
-
-                Tarayıcınız video oynatmayı desteklemiyor.
-
-            </video>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= REVIEWS ================= -->
-
-<section class="section reviews-section" id="yorumlar">
-
-    <div class="container">
-
-        <div class="section-title center">
-
-            <div class="small-title">
-                KULLANICI DENEYİMLERİ
-            </div>
-
-            <h2>
-                Kullanıcılarımız
-                <span>ne diyor?</span>
-            </h2>
-
-        </div>
-
-
-        <div class="reviews-grid">
-
-            <div class="review-card">
-
-                <div class="review-top">
-
-                    <div class="avatar">
-                        A
-                    </div>
-
-                    <div>
-                        <strong>Ahmet</strong>
-                        <span>Doğrulanmış kullanıcı</span>
-                    </div>
-
-                </div>
-
-                <div class="review-stars">
-                    ★★★★★
-                </div>
-
-                <p>
-                    Kurulum videosu sayesinde çok kolay kurdum.
-                    Görüntü gerçekten farklı bir deneyim sunuyor.
-                </p>
-
-            </div>
-
-
-            <div class="review-card">
-
-                <div class="review-top">
-
-                    <div class="avatar">
-                        M
-                    </div>
-
-                    <div>
-                        <strong>Mehmet</strong>
-                        <span>Doğrulanmış kullanıcı</span>
-                    </div>
-
-                </div>
-
-                <div class="review-stars">
-                    ★★★★★
-                </div>
-
-                <p>
-                    Telegram üzerinden hızlı şekilde yardımcı oldular.
-                    Kurulum konusunda sorun yaşamadım.
-                </p>
-
-            </div>
-
-
-            <div class="review-card">
-
-                <div class="review-top">
-
-                    <div class="avatar">
-                        E
-                    </div>
-
-                    <div>
-                        <strong>Emir</strong>
-                        <span>Doğrulanmış kullanıcı</span>
-                    </div>
-
-                </div>
-
-                <div class="review-stars">
-                    ★★★★★
-                </div>
-
-                <p>
-                    Mobilde kullanımı oldukça pratik.
-                    Ürün sayfasındaki anlatım da gayet açık.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= BUY ================= -->
-
-<section class="section buy-section" id="satinal">
-
-    <div class="container">
-
-        <div class="buy-box">
-
-            <div class="buy-content">
-
-                <div class="small-title">
-                    WIDEX iPAD MODE
-                </div>
-
-                <h2>
-                    Hazırsan
-                    <span>başlayalım.</span>
-                </h2>
-
-                <p>
-                    Ödeme işlemini tamamladıktan sonra dekontunu
-                    Telegram destek ekibimize gönder.
-                </p>
-
-
-                <div class="buy-price">
-                    <span>₺399</span>
-                    <small>tek seferlik</small>
-                </div>
-
-
-                <a
-                    href="https://t.me/WIDEXDESTEK"
-                    target="_blank"
-                    class="telegram-button"
-                >
-                    Telegram'dan Satın Al
-                    <span>→</span>
-                </a>
-
-            </div>
-
-
-            <div class="payment-box">
-
-                <div class="payment-title">
-                    💳 Ödeme Bilgileri
-                </div>
-
-                <div class="payment-row">
-                    <span>Ödeme yöntemi</span>
-                    <strong>IBAN</strong>
-                </div>
-
-                <div class="payment-row">
-                    <span>Alıcı</span>
-                    <strong>WIDEX</strong>
-                </div>
-
-                <div class="iban-box">
-
-                    <span>IBAN</span>
-
-                    <strong id="iban">
-                        TR00 0000 0000 0000 0000 0000 00
-                    </strong>
-
-                    <button id="copyIban">
-                        Kopyala
-                    </button>
-
-                </div>
-
-                <div class="payment-note">
-                    Ödemeyi yaptıktan sonra dekontunuzu
-                    Telegram destek hesabımıza göndermeniz yeterlidir.
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FAQ ================= -->
-
-<section class="section faq-section" id="sss">
-
-    <div class="container">
-
-        <div class="section-title center">
-
-            <div class="small-title">
-                SSS
-            </div>
-
-            <h2>
-                Sık sorulan
-                <span>sorular.</span>
-            </h2>
-
-        </div>
-
-
-        <div class="faq-list">
-
-            <div class="faq-item">
-
-                <button class="faq-question">
-                    Ürün nasıl teslim ediliyor?
-                    <span>+</span>
-                </button>
-
-                <div class="faq-answer">
-                    <p>
-                        Ödeme ve dekont kontrolünden sonra Telegram
-                        üzerinden teslimat ve kurulum bilgileri paylaşılır.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="faq-item">
-
-                <button class="faq-question">
-                    Kurulum için video var mı?
-                    <span>+</span>
-                </button>
-
-                <div class="faq-answer">
-                    <p>
-                        Evet. Ürünle birlikte adım adım kurulum videosu
-                        ve gerekli dosyalar sunulur.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="faq-item">
-
-                <button class="faq-question">
-                    Destek alabilir miyim?
-                    <span>+</span>
-                </button>
-
-                <div class="faq-answer">
-                    <p>
-                        Satın alma ve kurulum sürecinde Telegram
-                        destek hesabımız üzerinden yardımcı oluyoruz.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="faq-item">
-
-                <button class="faq-question">
-                    Hangi cihazlarda çalışıyor?
-                    <span>+</span>
-                </button>
-
-                <div class="faq-answer">
-                    <p>
-                        Ürün iOS ve Android cihazlar için hazırlanmıştır.
-                        Satın almadan önce cihazınızın destek durumunu
-                        Telegram üzerinden sorabilirsiniz.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="faq-item">
-
-                <button class="faq-question">
-                    Ödeme nasıl yapılıyor?
-                    <span>+</span>
-                </button>
-
-                <div class="faq-answer">
-                    <p>
-                        Şu anda ödeme yöntemi IBAN'dır. Ödeme sonrasında
-                        dekontunuzu Telegram destek hesabımıza gönderirsiniz.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer class="footer">
-
-    <div class="container footer-grid">
-
-        <div>
-
-            <a href="#" class="logo footer-logo">
-                <span class="logo-mark">W</span>
-                <span>WIDEX</span>
-            </a>
-
-            <p>
-                Mobil gaming deneyimini
-                yeniden keşfet.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <h4>Menü</h4>
-
-            <a href="#urun">Ürün</a>
-            <a href="#ozellikler">Özellikler</a>
-            <a href="#video">Kurulum</a>
-            <a href="#yorumlar">Yorumlar</a>
-
-        </div>
-
-
-        <div>
-
-            <h4>Destek</h4>
-
-            <a href="https://t.me/WIDEXDESTEK" target="_blank">
-                Telegram
-            </a>
-
-            <a href="#sss">
-                SSS
-            </a>
-
-        </div>
-
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        <div class="container">
-
-            © 2026 WIDEX. Tüm hakları saklıdır.
-
-        </div>
-
-    </div>
-
-</footer>
-
-
-<!-- ================= TELEGRAM FLOAT ================= -->
-
-<a
-    href="https://t.me/WIDEXDESTEK"
-    target="_blank"
-    class="telegram-float"
-    aria-label="Telegram Destek"
->
-
-    <span class="telegram-icon">✈</span>
-
-    <span class="telegram-tooltip">
-        Telegram Destek
-    </span>
-
-</a>
-
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
