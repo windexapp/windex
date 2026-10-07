@@ -1,19 +1,17 @@
-// Ekran Karşılaştırması Değiştirme (Normal vs Wide)
-function switchView(view) {
-    const wideBox = document.getElementById('view-wide');
-    const normalBox = document.getElementById('view-normal');
-    const buttons = document.querySelectorAll('.toggle-btn');
+// Fareyi (Mouse) Takip Eden Dinamik Işık Efekti
+const cursorGlow = document.getElementById('cursor-glow');
 
-    if (view === 'wide') {
-        wideBox.classList.add('active');
-        normalBox.classList.remove('active');
-        buttons[0].classList.add('active');
-        buttons[1].classList.remove('active');
-    } else {
-        normalBox.classList.add('active');
-        wideBox.classList.remove('active');
-        buttons[1].classList.add('active');
-        buttons[0].classList.remove('active');
+window.addEventListener('mousemove', (e) => {
+    cursorGlow.style.left = e.clientX + 'px';
+    cursorGlow.style.top = e.clientY + 'px';
+});
+
+// Her Müşteri Satın Al Butonuna Bastığında Benzersiz Referans Numarası Üretme
+function generateRandomRef() {
+    const randomNum = Math.floor(10000 + Math.random() * 90000);
+    const refElement = document.getElementById('dynamicRefNumber');
+    if(refElement) {
+        refElement.textContent = `WND-${randomNum}`;
     }
 }
 
@@ -35,8 +33,9 @@ faqItems.forEach(item => {
     });
 });
 
-// Modal (Satın Alma Popup)
+// Modal Aç/Kapat ve Referans Atama
 function openModal(id) {
+    generateRandomRef(); // Her açılışta yeni benzersiz refno üretir
     document.getElementById(id).classList.add('active');
     document.body.style.overflow = 'hidden';
 }
