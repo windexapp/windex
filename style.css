@@ -35,7 +35,9 @@ button {
 }
 
 
-/* ================= HEADER ================= */
+/* =====================================================
+   HEADER
+===================================================== */
 
 .header {
     position: fixed;
@@ -45,6 +47,7 @@ button {
     z-index: 999;
     background: rgba(7, 7, 8, 0.78);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
@@ -82,13 +85,28 @@ button {
 }
 
 .desktop-menu a {
+    position: relative;
     font-size: 14px;
     color: #9b9b9f;
     transition: 0.25s;
 }
 
-.desktop-menu a:hover {
+.desktop-menu a:hover,
+.desktop-menu a.active {
     color: #ffffff;
+}
+
+.desktop-menu a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -9px;
+    width: 4px;
+    height: 4px;
+    margin: auto;
+    border-radius: 50%;
+    background: #ffffff;
 }
 
 .nav-button {
@@ -114,12 +132,40 @@ button {
     cursor: pointer;
 }
 
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
 .mobile-menu {
     display: none;
 }
 
+.mobile-menu.active {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px 20px 22px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    background: #080809;
+}
 
-/* ================= HERO ================= */
+.mobile-menu a {
+    padding: 14px;
+    border-radius: 8px;
+    color: #a0a0a5;
+    font-size: 13px;
+}
+
+.mobile-menu a:hover {
+    background: rgba(255,255,255,0.05);
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero {
     position: relative;
@@ -139,13 +185,19 @@ button {
     background: rgba(255,255,255,0.045);
     filter: blur(120px);
     border-radius: 50%;
+    pointer-events: none;
 }
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 0.8fr;
+    grid-template-columns: 1fr 0.9fr;
     align-items: center;
-    gap: 70px;
+    gap: 45px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
 }
 
 .badge {
@@ -252,27 +304,49 @@ button {
 }
 
 
-/* ================= PHONE ================= */
+/* =====================================================
+   LANDSCAPE DEVICE
+===================================================== */
 
 .phone-area {
     position: relative;
-    height: 600px;
+    width: 100%;
+    height: 560px;
     display: grid;
     place-items: center;
 }
 
 .phone {
     position: relative;
-    width: 285px;
-    height: 570px;
+    width: 560px;
+    height: 325px;
     padding: 9px;
-    border-radius: 44px;
-    background: linear-gradient(145deg, #444, #111);
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #4a4a4e 0%,
+            #1b1b1e 35%,
+            #080809 100%
+        );
+
     box-shadow:
-        0 50px 100px rgba(0,0,0,0.7),
-        0 0 80px rgba(255,255,255,0.04);
-    transform: rotate(5deg);
+        0 50px 100px rgba(0,0,0,0.75),
+        0 0 80px rgba(255,255,255,0.04),
+        inset 0 1px 1px rgba(255,255,255,0.25);
+
+    transform: rotate(-2deg);
     z-index: 2;
+}
+
+.phone::before {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 32px;
+    border: 1px solid rgba(255,255,255,0.12);
+    pointer-events: none;
 }
 
 .phone-screen {
@@ -280,37 +354,47 @@ button {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    border-radius: 36px;
-    background: #111;
+    border-radius: 27px;
+    background: #050505;
+    border: 1px solid rgba(0,0,0,0.8);
 }
 
 .hero-game-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 .screen-overlay {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.3),
-        transparent 30%,
-        transparent 70%,
-        rgba(0,0,0,0.4)
-    );
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.3),
+            transparent 30%,
+            transparent 70%,
+            rgba(0,0,0,0.5)
+        );
 }
 
 .game-label {
     position: absolute;
     left: 18px;
     bottom: 18px;
+
     padding: 7px 10px;
+
     background: rgba(0,0,0,0.65);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 6px;
+
     font-size: 9px;
     font-weight: 800;
     letter-spacing: 1px;
@@ -319,35 +403,57 @@ button {
 .phone-notch {
     position: absolute;
     z-index: 5;
-    top: 17px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 92px;
-    height: 23px;
+
+    left: 10px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 7px;
+    height: 85px;
+
     border-radius: 20px;
-    background: #000;
+    background: #000000;
+
+    box-shadow:
+        inset 0 0 4px rgba(255,255,255,0.08);
 }
 
 .phone-shadow {
     position: absolute;
-    width: 280px;
-    height: 100px;
-    bottom: 20px;
-    background: #000;
-    filter: blur(50px);
+
+    width: 500px;
+    height: 90px;
+
+    bottom: 25px;
+
+    background: #000000;
+    filter: blur(55px);
+
+    opacity: 0.8;
 }
 
 .floating-card {
     position: absolute;
     z-index: 4;
+
+    display: flex;
+    align-items: center;
+
     padding: 12px 15px;
-    background: rgba(18,18,20,0.8);
+
+    background: rgba(18,18,20,0.82);
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 12px;
+
     font-size: 11px;
     font-weight: 700;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.3);
 }
 
 .floating-card span {
@@ -355,17 +461,19 @@ button {
 }
 
 .card-one {
-    top: 130px;
-    right: 0;
+    top: 115px;
+    right: -5px;
 }
 
 .card-two {
-    bottom: 130px;
-    left: 0;
+    bottom: 115px;
+    left: -5px;
 }
 
 
-/* ================= TRUST ================= */
+/* =====================================================
+   TRUST
+===================================================== */
 
 .trust {
     border-top: 1px solid rgba(255,255,255,0.06);
@@ -381,6 +489,7 @@ button {
 .trust-grid > div {
     padding: 25px;
     border-right: 1px solid rgba(255,255,255,0.06);
+
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -400,7 +509,9 @@ button {
 }
 
 
-/* ================= SECTION ================= */
+/* =====================================================
+   SECTIONS
+===================================================== */
 
 .section {
     padding: 120px 0;
@@ -442,7 +553,9 @@ button {
 }
 
 
-/* ================= PRODUCT ================= */
+/* =====================================================
+   PRODUCT
+===================================================== */
 
 .product-grid {
     display: grid;
@@ -453,11 +566,15 @@ button {
 
 .visual-card {
     position: relative;
-    border-radius: 22px;
     overflow: hidden;
+
+    border-radius: 22px;
+
     background: #101012;
     border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.4);
 }
 
 .visual-card img {
@@ -470,11 +587,15 @@ button {
     position: absolute;
     top: 20px;
     left: 20px;
+
     padding: 9px 12px;
+
     background: rgba(0,0,0,0.65);
     backdrop-filter: blur(10px);
+
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 8px;
+
     font-size: 10px;
     font-weight: 900;
 }
@@ -541,6 +662,7 @@ button {
 .product-list {
     list-style: none;
     margin-top: 25px;
+
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -569,7 +691,9 @@ button {
 }
 
 
-/* ================= FEATURES ================= */
+/* =====================================================
+   FEATURES
+===================================================== */
 
 .features-section {
     background: #0b0b0d;
@@ -583,9 +707,12 @@ button {
 
 .feature-card {
     padding: 30px;
+
     border: 1px solid rgba(255,255,255,0.07);
     border-radius: 15px;
+
     background: #101012;
+
     transition: 0.3s;
 }
 
@@ -597,10 +724,13 @@ button {
 .feature-icon {
     width: 45px;
     height: 45px;
+
     display: grid;
     place-items: center;
+
     border-radius: 12px;
     background: rgba(255,255,255,0.07);
+
     margin-bottom: 24px;
     font-size: 18px;
 }
@@ -617,7 +747,9 @@ button {
 }
 
 
-/* ================= COMPARISON ================= */
+/* =====================================================
+   COMPARISON
+===================================================== */
 
 .comparison {
     display: grid;
@@ -628,8 +760,10 @@ button {
 
 .comparison-item {
     overflow: hidden;
+
     border-radius: 16px;
     background: #101012;
+
     border: 1px solid rgba(255,255,255,0.07);
 }
 
@@ -652,26 +786,37 @@ button {
 .comparison-arrow {
     width: 50px;
     height: 50px;
+
     display: grid;
     place-items: center;
+
     border-radius: 50%;
+
     background: #ffffff;
-    color: #000;
+    color: #000000;
+
     font-weight: 900;
     margin: auto;
 }
 
 
-/* ================= VIDEO ================= */
+/* =====================================================
+   VIDEO
+===================================================== */
 
 .video-wrapper {
     max-width: 900px;
     margin: auto;
+
     overflow: hidden;
+
     border-radius: 20px;
+
     border: 1px solid rgba(255,255,255,0.08);
     background: #101012;
-    box-shadow: 0 30px 70px rgba(0,0,0,0.4);
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,0.4);
 }
 
 .video-wrapper video {
@@ -680,7 +825,9 @@ button {
 }
 
 
-/* ================= REVIEWS ================= */
+/* =====================================================
+   REVIEWS
+===================================================== */
 
 .reviews-section {
     background: #0b0b0d;
@@ -694,7 +841,9 @@ button {
 
 .review-card {
     padding: 28px;
+
     background: #101012;
+
     border: 1px solid rgba(255,255,255,0.07);
     border-radius: 15px;
 }
@@ -708,11 +857,15 @@ button {
 .avatar {
     width: 40px;
     height: 40px;
+
     display: grid;
     place-items: center;
+
     border-radius: 50%;
+
     background: #ffffff;
-    color: #000;
+    color: #000000;
+
     font-weight: 900;
 }
 
@@ -744,20 +897,26 @@ button {
 }
 
 
-/* ================= BUY ================= */
+/* =====================================================
+   BUY
+===================================================== */
 
 .buy-box {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
+
     padding: 55px;
+
     border-radius: 24px;
+
     background:
         linear-gradient(
             135deg,
             rgba(255,255,255,0.07),
             rgba(255,255,255,0.025)
         );
+
     border: 1px solid rgba(255,255,255,0.1);
 }
 
@@ -780,6 +939,7 @@ button {
 
 .buy-price {
     margin-top: 28px;
+
     display: flex;
     align-items: baseline;
     gap: 10px;
@@ -797,7 +957,7 @@ button {
 .telegram-button {
     margin-top: 25px;
     background: #229ed9;
-    color: white;
+    color: #ffffff;
 }
 
 .telegram-button:hover {
@@ -806,7 +966,9 @@ button {
 
 .payment-box {
     padding: 28px;
+
     background: rgba(0,0,0,0.25);
+
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 16px;
 }
@@ -819,8 +981,11 @@ button {
 .payment-row {
     display: flex;
     justify-content: space-between;
+
     padding: 14px 0;
+
     border-bottom: 1px solid rgba(255,255,255,0.06);
+
     font-size: 12px;
 }
 
@@ -831,7 +996,9 @@ button {
 .iban-box {
     margin-top: 20px;
     padding: 15px;
+
     border-radius: 10px;
+
     background: #101012;
     border: 1px solid rgba(255,255,255,0.07);
 }
@@ -851,25 +1018,35 @@ button {
 
 .iban-box button {
     margin-top: 12px;
+
     border: 0;
+
     background: #ffffff;
-    color: #000;
+    color: #000000;
+
     padding: 8px 12px;
+
     border-radius: 6px;
+
     font-size: 10px;
     font-weight: 800;
+
     cursor: pointer;
 }
 
 .payment-note {
     margin-top: 15px;
+
     color: #67676d;
+
     font-size: 10px;
     line-height: 1.6;
 }
 
 
-/* ================= FAQ ================= */
+/* =====================================================
+   FAQ
+===================================================== */
 
 .faq-list {
     max-width: 800px;
@@ -882,15 +1059,22 @@ button {
 
 .faq-question {
     width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 22px 0;
+
     border: 0;
     background: transparent;
-    color: white;
+
+    color: #ffffff;
+
     text-align: left;
+
     cursor: pointer;
+
     font-size: 14px;
     font-weight: 700;
 }
@@ -909,7 +1093,9 @@ button {
 
 .faq-answer p {
     padding: 0 0 20px;
+
     color: #77777d;
+
     font-size: 12px;
     line-height: 1.8;
 }
@@ -919,7 +1105,9 @@ button {
 }
 
 
-/* ================= FOOTER ================= */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 .footer {
     border-top: 1px solid rgba(255,255,255,0.06);
@@ -928,8 +1116,10 @@ button {
 
 .footer-grid {
     padding: 70px 0;
+
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
+
     gap: 60px;
 }
 
@@ -939,6 +1129,7 @@ button {
 
 .footer-grid p {
     margin-top: 15px;
+
     color: #66666d;
     font-size: 12px;
 }
@@ -960,32 +1151,45 @@ button {
 }
 
 .footer-grid a:not(.logo):hover {
-    color: white;
+    color: #ffffff;
 }
 
 .footer-bottom {
     padding: 20px 0;
+
     border-top: 1px solid rgba(255,255,255,0.06);
+
     color: #505056;
     font-size: 10px;
 }
 
 
-/* ================= TELEGRAM FLOAT ================= */
+/* =====================================================
+   TELEGRAM FLOAT
+===================================================== */
 
 .telegram-float {
     position: fixed;
+
     z-index: 1000;
+
     right: 22px;
     bottom: 22px;
+
     width: 58px;
     height: 58px;
+
     display: grid;
     place-items: center;
+
     border-radius: 50%;
+
     background: #229ed9;
     color: #ffffff;
-    box-shadow: 0 15px 35px rgba(34,158,217,0.35);
+
+    box-shadow:
+        0 15px 35px rgba(34,158,217,0.35);
+
     transition: 0.25s;
 }
 
@@ -999,17 +1203,29 @@ button {
 
 .telegram-tooltip {
     position: absolute;
+
     right: 70px;
+
     white-space: nowrap;
+
     padding: 9px 12px;
+
     border-radius: 7px;
+
     background: #161618;
+
     border: 1px solid rgba(255,255,255,0.08);
-    color: white;
+
+    color: #ffffff;
+
     font-size: 10px;
+
     opacity: 0;
+
     pointer-events: none;
+
     transform: translateX(8px);
+
     transition: 0.25s;
 }
 
@@ -1019,7 +1235,54 @@ button {
 }
 
 
-/* ================= RESPONSIVE ================= */
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+.hidden-animation {
+    opacity: 0;
+    transform: translateY(25px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.hidden-animation.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .hero-grid {
+        grid-template-columns: 1fr 0.85fr;
+        gap: 20px;
+    }
+
+    .phone {
+        width: 480px;
+        height: 280px;
+    }
+
+    .phone-shadow {
+        width: 430px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE NAV + HERO
+===================================================== */
 
 @media (max-width: 900px) {
 
@@ -1032,40 +1295,16 @@ button {
         display: block;
     }
 
-    .mobile-menu {
-        display: none;
-        padding: 15px 20px 22px;
-        border-top: 1px solid rgba(255,255,255,0.06);
-        background: #080809;
-    }
-
-    .mobile-menu.active {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .mobile-menu a {
-        padding: 14px;
-        border-radius: 8px;
-        color: #a0a0a5;
-        font-size: 13px;
-    }
-
-    .mobile-menu a:hover {
-        background: rgba(255,255,255,0.05);
-        color: white;
-    }
-
     .hero {
         padding-top: 120px;
         min-height: auto;
-        padding-bottom: 100px;
+        padding-bottom: 90px;
     }
 
     .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 20px;
     }
 
     .hero-content > p {
@@ -1082,7 +1321,13 @@ button {
     }
 
     .phone-area {
-        height: 570px;
+        height: 470px;
+        margin-top: 15px;
+    }
+
+    .phone {
+        width: 540px;
+        height: 315px;
     }
 
     .trust-grid {
@@ -1096,10 +1341,6 @@ button {
     .product-grid,
     .buy-box {
         grid-template-columns: 1fr;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr 1fr;
     }
 
     .reviews-grid {
@@ -1117,7 +1358,11 @@ button {
 }
 
 
-@media (max-width: 600px) {
+/* =====================================================
+   PHONE / SMALL TABLET
+===================================================== */
+
+@media (max-width: 650px) {
 
     .container {
         width: min(100% - 28px, 1180px);
@@ -1145,31 +1390,71 @@ button {
         gap: 20px;
     }
 
+    /*
+       MOBİLDE YATAY CİHAZ
+       Ekrandan taşmaması için küçültülüyor.
+    */
+
+    .phone-area {
+        width: 100%;
+        height: 270px;
+        margin-top: 30px;
+    }
+
     .phone {
-        width: 245px;
-        height: 490px;
-        border-radius: 38px;
+        width: min(360px, 92vw);
+        height: min(205px, 52vw);
+
+        padding: 6px;
+
+        border-radius: 23px;
+
+        transform: rotate(-2deg);
+    }
+
+    .phone::before {
+        inset: 2px;
+        border-radius: 21px;
     }
 
     .phone-screen {
-        border-radius: 31px;
+        border-radius: 18px;
     }
 
-    .phone-area {
-        height: 510px;
+    .phone-notch {
+        left: 5px;
+        width: 5px;
+        height: 50px;
+    }
+
+    .game-label {
+        left: 10px;
+        bottom: 10px;
+
+        padding: 5px 7px;
+
+        font-size: 7px;
+    }
+
+    .phone-shadow {
+        width: 300px;
+        height: 50px;
+        bottom: 15px;
     }
 
     .floating-card {
-        font-size: 9px;
-        padding: 10px;
+        font-size: 8px;
+        padding: 9px 10px;
     }
 
     .card-one {
-        right: -5px;
+        top: 25px;
+        right: -2px;
     }
 
     .card-two {
-        left: -5px;
+        bottom: 25px;
+        left: -2px;
     }
 
     .trust-grid {
@@ -1239,6 +1524,49 @@ button {
 
     .telegram-tooltip {
         display: none;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .phone-area {
+        height: 235px;
+    }
+
+    .phone {
+        width: 320px;
+        height: 180px;
+    }
+
+    .floating-card {
+        display: none;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
     }
 
 }
