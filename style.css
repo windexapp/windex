@@ -1,11 +1,11 @@
 :root {
-    --bg-dark: #07090E;
-    --bg-panel: rgba(15, 20, 28, 0.7);
+    --bg-dark: #05070A;
+    --bg-panel: rgba(13, 17, 26, 0.75);
     --primary-cyan: #00F2FE;
     --primary-blue: #4FACFE;
     --text-main: #FFFFFF;
     --text-muted: #94A3B8;
-    --glass-border: rgba(0, 242, 254, 0.15);
+    --glass-border: rgba(0, 242, 254, 0.2);
 }
 
 * {
@@ -22,7 +22,7 @@ body {
     line-height: 1.6;
 }
 
-h1, h2, h3, .logo span, .toggle-btn {
+h1, h2, h3, .logo span {
     font-family: 'Rajdhani', sans-serif;
 }
 
@@ -32,26 +32,38 @@ h1, h2, h3, .logo span, .toggle-btn {
     -webkit-text-fill-color: transparent;
 }
 
-/* Cam Efekti Paneller */
+/* Cam Efekti Panelleri */
 .glass-panel {
     background: var(--bg-panel);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* Arka Plan Işıkları */
+/* Mouse'u Takip Eden Dinamik Işık Efekti */
+#cursor-glow {
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.15) 0%, rgba(79, 172, 254, 0.05) 50%, transparent 80%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: width 0.2s, height 0.2s;
+}
+
 .glow-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(120px);
+    filter: blur(140px);
     z-index: 0;
     pointer-events: none;
 }
-.orb-1 { width: 400px; height: 400px; background: var(--primary-blue); top: -50px; left: -100px; opacity: 0.3; }
-.orb-2 { width: 500px; height: 500px; background: var(--primary-cyan); top: 600px; right: -150px; opacity: 0.2; }
+.orb-1 { width: 500px; height: 500px; background: rgba(79, 172, 254, 0.2); top: 100px; left: -200px; }
+.orb-2 { width: 600px; height: 600px; background: rgba(0, 242, 254, 0.15); top: 800px; right: -200px; }
 
 /* Navbar */
 .navbar {
@@ -60,8 +72,8 @@ h1, h2, h3, .logo span, .toggle-btn {
     width: 100%;
     padding: 15px 0;
     z-index: 100;
-    background: rgba(7, 9, 14, 0.85);
-    backdrop-filter: blur(12px);
+    background: rgba(5, 7, 10, 0.85);
+    backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--glass-border);
 }
 .nav-container {
@@ -90,7 +102,7 @@ h1, h2, h3, .logo span, .toggle-btn {
 /* Butonlar */
 .btn-primary, .btn-secondary {
     padding: 12px 26px;
-    border-radius: 10px;
+    border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
@@ -103,21 +115,25 @@ h1, h2, h3, .logo span, .toggle-btn {
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
     color: #000;
-    box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 25px rgba(0, 242, 254, 0.7); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(0, 242, 254, 0.7); }
 .btn-secondary { background: rgba(255, 255, 255, 0.05); color: #fff; border: 1px solid var(--glass-border); }
 .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--primary-cyan); }
 
-/* Hero Section */
+/* Hero Section & iPhone 15 Çerçevesi */
 .hero {
-    padding: 140px 20px 60px;
+    padding: 150px 20px 80px;
     max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
+.hero-content { flex: 1; }
 .badge {
     background: rgba(0, 242, 254, 0.1);
     border: 1px solid var(--primary-cyan);
@@ -128,57 +144,90 @@ h1, h2, h3, .logo span, .toggle-btn {
     display: inline-block;
     margin-bottom: 20px;
 }
-.hero h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; }
-.hero p { color: var(--text-muted); max-width: 650px; margin: 0 auto 30px; font-size: 1.1rem; }
-.hero-buttons { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
-.hero-image-wrapper { max-width: 900px; margin: 0 auto; padding: 10px; overflow: hidden; }
-.hero-img { width: 100%; border-radius: 14px; display: block; }
+.hero h1 { font-size: 3.5rem; line-height: 1.15; margin-bottom: 20px; }
+.hero p { color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem; }
+.hero-buttons { display: flex; gap: 15px; margin-bottom: 35px; }
 
-/* Ekran Karşılaştırması */
-.comparison-section, .preview-section, .features, .faq-section {
+/* Dikkat Çekici FPS & Tablet Banner */
+.highlight-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+    max-width: 500px;
+    border-color: rgba(0, 242, 254, 0.3);
+}
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.highlight-item i {
+    font-size: 24px;
+    color: var(--primary-cyan);
+}
+.highlight-item h4 { font-size: 1rem; margin-bottom: 2px; }
+.highlight-item p { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+.divider-line { width: 1px; height: 35px; background: var(--glass-border); }
+
+/* iPhone 15 Mockup Çerçevesi */
+.iphone-container { flex: 1; display: flex; justify-content: center; }
+.iphone-mockup {
+    width: 310px;
+    height: 620px;
+    background: #1a1f2c;
+    border-radius: 46px;
+    padding: 12px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 242, 254, 0.2);
+    border: 3px solid #2d3748;
+    position: relative;
+}
+.iphone-screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 38px;
+    overflow: hidden;
+    position: relative;
+}
+.hero-screen-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Yan Yana Karşılaştırma Bölümü */
+.comparison-section, .preview-section, .features, .reviews-section, .faq-section {
     max-width: 1200px;
-    margin: 80px auto;
+    margin: 100px auto;
     padding: 0 20px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 .section-title { text-align: center; margin-bottom: 40px; }
-.section-title h2 { font-size: 2.2rem; letter-spacing: 1px; }
+.section-title h2 { font-size: 2.5rem; letter-spacing: 1px; }
 .section-title p { color: var(--text-muted); }
 
-.toggle-buttons { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
-.toggle-btn {
-    padding: 12px 24px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--glass-border);
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
+.side-by-side-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
 }
-.toggle-btn.active, .toggle-btn:hover {
-    background: linear-gradient(90deg, var(--primary-cyan), var(--primary-blue));
-    color: #000;
-    border-color: transparent;
-}
-
-.comparison-display { padding: 12px; }
-.view-box { display: none; position: relative; }
-.view-box.active { display: block; }
-.view-box img { width: 100%; border-radius: 12px; display: block; }
-.view-tag {
-    position: absolute;
-    top: 25px;
-    left: 25px;
+.comparison-card { padding: 20px; position: relative; }
+.card-tag {
     padding: 8px 16px;
     border-radius: 8px;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.85px;
+    display: inline-block;
+    margin-bottom: 15px;
+    font-family: 'Rajdhani', sans-serif;
 }
 .tag-wide { background: rgba(0, 242, 254, 0.9); color: #000; }
 .tag-normal { background: rgba(239, 68, 68, 0.9); color: #fff; }
+.card-img-wrap { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 15px; }
+.card-img-wrap img { width: 100%; display: block; }
+.card-desc { color: var(--text-muted); font-size: 0.95rem; }
 
 /* Ürün Önizleme Kartı */
 .preview-card { display: flex; align-items: center; gap: 40px; padding: 40px; }
@@ -190,21 +239,29 @@ h1, h2, h3, .logo span, .toggle-btn {
 .check-list li { margin-bottom: 15px; font-size: 1rem; color: #E2E8F0; }
 .check-list i { color: var(--primary-cyan); margin-right: 10px; }
 
-/* Grid Özellikler */
+/* Özellikler Grid */
 .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-.feature-card { padding: 30px; text-align: center; }
+.feature-card { padding: 35px; text-align: center; }
 .icon-box {
-    width: 60px; height: 60px;
+    width: 65px; height: 65px;
     background: rgba(0, 242, 254, 0.1);
     color: var(--primary-cyan);
-    border-radius: 12px;
+    border-radius: 16px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 24px; margin: 0 auto 20px;
+    font-size: 26px; margin: 0 auto 20px;
 }
 .feature-card h3 { font-size: 1.4rem; margin-bottom: 10px; }
 .feature-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-/* SSS Accordion */
+/* Müşteri Yorumları */
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+.review-card { padding: 30px; display: flex; flex-direction: column; justify-content: space-between; }
+.review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.username { font-weight: 700; font-size: 1.1rem; }
+.stars { color: #facc15; font-size: 0.9rem; }
+.review-text { color: var(--text-muted); font-size: 0.95rem; font-style: italic; }
+
+/* SSS */
 .faq-container { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
 .faq-item { overflow: hidden; cursor: pointer; }
 .faq-question { padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; }
@@ -215,40 +272,56 @@ h1, h2, h3, .logo span, .toggle-btn {
 .faq-item.active .faq-answer { padding-bottom: 20px; }
 .faq-answer p { color: var(--text-muted); font-size: 0.95rem; }
 
-/* Modal (Popup) */
+/* Satın Alım Modalı & Dinamik Referans */
 .modal-overlay {
     display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); z-index: 1000;
+    background: rgba(0,0,0,0.85); backdrop-filter: blur(12px); z-index: 1000;
     justify-content: center; align-items: center; padding: 20px; opacity: 0; transition: 0.3s;
 }
 .modal-overlay.active { display: flex; opacity: 1; }
 .modal-content { width: 100%; max-width: 440px; position: relative; padding: 30px; }
 .close-btn { position: absolute; top: 15px; right: 20px; font-size: 28px; color: var(--text-muted); cursor: pointer; }
 .modal-header { text-align: center; margin-bottom: 20px; }
-.price { font-size: 2.2rem; font-weight: 700; color: #fff; margin-top: 10px; }
+.price { font-size: 2.2rem; font-weight: 700; color: #fff; margin-top: 10px; font-family: 'Rajdhani', sans-serif; }
 .price .period { font-size: 0.9rem; color: var(--text-muted); }
 .modal-features { list-style: none; margin-bottom: 20px; }
 .modal-features li { margin-bottom: 10px; font-size: 0.95rem; }
 .modal-features i { color: var(--primary-cyan); margin-right: 8px; }
 .payment-info { background: rgba(0,0,0,0.4); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); }
 .pay-title { font-weight: 600; color: var(--primary-cyan); margin-bottom: 5px; }
-.pay-desc { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px; }
-.crypto-wallet { display: flex; align-items: center; background: rgba(255,255,255,0.05); padding: 8px 12px; border-radius: 8px; }
+.pay-desc { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px; }
+.crypto-wallet { display: flex; align-items: center; background: rgba(255,255,255,0.05); padding: 8px 12px; border-radius: 8px; margin-bottom: 10px; }
 .wallet-label { font-size: 0.8rem; color: var(--text-muted); margin-right: 8px; }
 .wallet-address { flex-grow: 1; font-family: monospace; font-size: 0.9rem; }
 .copy-btn { background: none; border: none; color: var(--primary-cyan); cursor: pointer; font-size: 1rem; }
+
+/* Dinamik Referans Numarası Kutusu */
+.ref-box {
+    background: rgba(0, 242, 254, 0.08);
+    border: 1px dashed var(--primary-cyan);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+.ref-box strong { color: var(--primary-cyan); font-family: monospace; font-size: 1.1rem; }
+
 .btn-telegram { display: block; text-align: center; background: #0088cc; color: #fff; padding: 14px; border-radius: 10px; text-decoration: none; font-weight: 600; margin-top: 20px; }
+.btn-telegram:hover { background: #0099e6; }
 
 /* Footer */
-footer { border-top: 1px solid var(--glass-border); padding: 30px 20px; text-align: center; margin-top: 60px; }
+footer { border-top: 1px solid var(--glass-border); padding: 40px 20px; text-align: center; margin-top: 80px; }
+.footer-content { max-width: 800px; margin: 0 auto; }
 .footer-logo { display: flex; justify-content: center; align-items: center; gap: 10px; font-weight: 700; font-size: 1.2rem; margin-bottom: 10px; }
-footer p { color: var(--text-muted); font-size: 0.85rem; }
+footer p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 8px; }
 
-/* Responsive Mobil */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.3rem; }
-    .nav-links { display: none; }
-    .preview-card { flex-direction: column; text-align: center; padding: 20px; }
-    .hero-buttons { flex-direction: column; }
-    .toggle-buttons { flex-direction: column; }
+/* Mobil Uyum */
+@media (max-width: 900px) {
+    .hero { flex-direction: column; text-align: center; padding-top: 120px; }
+    .hero-buttons { justify-content: center; }
+    .highlight-banner { margin: 0 auto; }
+    .side-by-side-grid { grid-template-columns: 1fr; }
+    .preview-card { flex-direction: column; text-align: center; }
 }
